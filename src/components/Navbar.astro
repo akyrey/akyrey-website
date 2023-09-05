@@ -1,0 +1,52 @@
+---
+import Logo from './Logo.astro';
+
+interface Props {
+  path: string;
+}
+---
+
+<nav class="navbar" role="navigation">
+  <div class="container">
+    <div class="logo">
+      <h1 class="h1"><Logo /></h1>
+    </div>
+  </div>
+</nav>
+
+<style>
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  .container {
+    display: flex;
+    padding: 0.5rem;
+    max-width: 48rem;
+    margin: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      margin-right: 1.25rem;
+
+      .h1 {
+        font-family: "M PLUS Rounded 1c", sans-serif;
+        font-weight: bold;
+        letter-spacing: -0.05rem;
+
+        @media screen and (min-width: 48em) {
+          font-size: 1.875rem;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+}
+</style>
