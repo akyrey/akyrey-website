@@ -1,10 +1,13 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import personalImage from "../img/me.jpg";
 ---
 
 <Layout title="Dario Vogogna - Homepage">
     <div class="text-center backdrop-blur p-3 mb-6 rounded-lg">
-        <span>Hello, I&apos;m a full stack developer based in Italy!</span>
+        <span>Hello, I&apos;m a full-stack developer based in Italy!</span>
     </div>
 
     <div class="md:flex">
@@ -14,9 +17,19 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div class="shrink-0 mt-4 text-center md:mt-0 md:ml-6">
             <div class="border-2 w-24 h-24 inline-block rounded-full overflow-hidden">
+              <Image src={personalImage} alt="My profile picture" />
             </div>
         </div>
     </div>
+    <Section>
+        <h3 class="mt-3 mb-4 text-xl font-bold underline underline-offset-8 decoration-4 decoration-secondary">Work</h3>
+        <p class="text-justify indent-1 hyphens-auto">
+            I&apos;m a full-stack developer based in Turin with a passion for optimization.
+            I like working with different tech stack and always facing new problems. I tend to be a problem
+            solver, sometimes of problems I create myself.
+            I&apos; currently working for <span class="text-tertiary outline-transparent underline-offset-4 outline-offset-2 cursor-pointer decoration-none hover:underline transition-colors ease-out duration-150">Euronovate</span> as the front end team leader.
+        </p>
+    </Section>
 </Layout>
 
 <style>

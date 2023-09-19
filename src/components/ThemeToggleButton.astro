@@ -1,0 +1,39 @@
+---
+import MoonIcon from "./icons/MoonIcon.astro";
+import SunIcon from "./icons/SunIcon.astro";
+---
+
+<script>
+    const storageKey = "theme"
+
+    const getColorPreference = () => {
+        const preference = localStorage.getItem(storageKey);
+
+        if (preference) {
+            return preference;
+        }
+
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    const setPreference = (themeName: string) => {
+        localStorage.setItem(storageKey, themeName)
+
+        document.firstElementChild?.setAttribute('data-theme', themeName);
+    }
+
+    const togglePreference = () => {
+        setPreference(getColorPreference() === 'dark' ? 'light' : 'dark');
+    }
+
+    const theme = getColorPreference();
+    setPreference(theme);
+
+    document.getElementById("toggle-theme")?.addEventListener("click", togglePreference);
+</script>
+
+<div class="inline-block">
+    <button type="button" aria-label="Toggle theme" class="" id="toggle-theme">
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+    </button>
+</div>
