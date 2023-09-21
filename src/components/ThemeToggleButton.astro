@@ -16,24 +16,37 @@ import SunIcon from "./icons/SunIcon.astro";
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    const setPreference = (themeName: string) => {
+    const setPreference = (themeName) => {
         localStorage.setItem(storageKey, themeName)
 
-        document.firstElementChild?.setAttribute('data-theme', themeName);
+        if (themeName === "light") {
+            document.documentElement.classList.remove("dark");
+        } else {
+            document.documentElement.classList.add("dark");
+        }
     }
 
     const togglePreference = () => {
         setPreference(getColorPreference() === 'dark' ? 'light' : 'dark');
     }
 
-    const theme = getColorPreference();
-    setPreference(theme);
+    setPreference(getColorPreference());
 
     document.getElementById("toggle-theme")?.addEventListener("click", togglePreference);
 </script>
 
 <div class="inline-block">
-    <button type="button" aria-label="Toggle theme" class="" id="toggle-theme">
-        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+    <button
+        type="button"
+        aria-label="Toggle theme"
+        class="inline-flex appearance-none items-center justify-center select-none relative
+               whitespace-nowrap align-middle outline-transparent leading-5 rounded-md font-semibold
+               h-10 w-10 ps-4 pe-4 min-w-[2.5rem] text-base bg-purple-500 text-white
+               transition-colors duration-200
+               dark:bg-orange-200 dark:text-gray-800"
+        id="toggle-theme"
+    >
+        <SunIcon class="w-4 h-4 shrink-0 text-current leading-4 align-middle hidden dark:inline-block" />
+        <MoonIcon class="w-4 h-4 shrink-0 text-current leading-4 align-middle inline-block dark:hidden" />
     </button>
 </div>
