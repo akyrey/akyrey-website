@@ -7,12 +7,13 @@ interface Props {
 }
 ---
 
-<nav class="fixed w-full z-10 backdrop-blur" role="navigation">
+<nav class="fixed w-full z-10 backdrop-blur bg-white bg-opacity-25 dark:bg-dark dark:bg-opacity-50" role="navigation">
   <div class="flex p-2 max-w-3xl m-auto flex-wrap items-center justify-between">
     <div class="flex items-center mr-5">
       <h1 class="font-bold tracking-tighter md:text-3xl md:leading-5"><Logo /></h1>
     </div>
-    <div class="flex-1">
+    <div class="grow"></div>
+    <div class="flex flex-1 justify-end">
       <ThemeToggleButton />
     </div>
   </div>

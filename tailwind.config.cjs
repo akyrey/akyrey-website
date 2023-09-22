@@ -7,7 +7,8 @@ module.exports = {
       colors: {
         secondary: getColorFromVariable("--secondary"),
         tertiary: getColorFromVariable("--tertiary"),
-        main: getColorFromVariable("--main"),
+        light: getColorFromVariable("--light"),
+        dark: getColorFromVariable("--dark"),
       },
     },
   },
