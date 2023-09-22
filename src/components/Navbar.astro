@@ -1,6 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import Logo from "./Logo.astro";
 import ThemeToggleButton from "./ThemeToggleButton.astro";
+import githubImage from "../img/github-mark.png";
+import MenuButton from "./MenuButton.astro";
 
 interface Props {
   path: string;
@@ -8,13 +11,19 @@ interface Props {
 ---
 
 <nav class="fixed w-full z-10 backdrop-blur bg-white bg-opacity-25 dark:bg-dark dark:bg-opacity-50" role="navigation">
-  <div class="flex p-2 max-w-3xl m-auto flex-wrap items-center justify-between">
-    <div class="flex items-center mr-5">
-      <h1 class="font-bold tracking-tighter md:text-3xl md:leading-5"><Logo /></h1>
+    <div class="flex p-2 max-w-3xl m-auto flex-wrap items-center justify-between">
+        <div class="flex items-center mr-5">
+            <h1 class="font-bold tracking-tighter md:text-3xl md:leading-5"><Logo /></h1>
+        </div>
+        <div class="hidden md:flex md:flex-row md:grow md:items-center">
+            <a target="_blank" href="https://github.com/akyrey/akyrey-website" class="inline-flex cursor-pointer transition-colors outline-transparent items-center gap-2">
+                <Image src={githubImage} alt="GitHub logo" class="w-5 h-5" />
+                <span>Source</span>
+            </a>
+        </div>
+        <div class="flex flex-1 justify-end gap-2 md:gap-0">
+            <ThemeToggleButton />
+            <MenuButton />
+        </div>
     </div>
-    <div class="grow"></div>
-    <div class="flex flex-1 justify-end">
-      <ThemeToggleButton />
-    </div>
-  </div>
 </nav>
