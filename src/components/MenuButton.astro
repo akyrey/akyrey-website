@@ -1,4 +1,5 @@
 ---
+import MenuLink from "./MenuLink.astro";
 import HamburgerMenuIcon from "./icons/HamburgerMenuIcon.astro";
 ---
 
@@ -12,10 +13,12 @@ import HamburgerMenuIcon from "./icons/HamburgerMenuIcon.astro";
                border border-gray-200 p-0 hover:bg-gray-100">
         <HamburgerMenuIcon />
     </button>
-    <!-- <div id="mobile-menu" class="invisible translate-x-[-2rem] translate-y-14 min-w-max absolute inset-auto m-0 z-10"> -->
-    <!--     <div class="opacity-0 invisible outline-transparent min-w-[14rem] py-2 rounded-md bg-white shadow-sm shadow-black scale-90"> -->
-    <!--     </div> -->
-    <!-- </div> -->
+    <div id="mobile-menu" class="invisible translate-y-14 min-w-max absolute top-0 right-0 m-0 z-10">
+        <div class="opacity-0 invisible outline-transparent min-w-[14rem] py-2 rounded-md bg-white shadow-sm scale-90">
+            <MenuLink name="Home" url="/" />
+            <MenuLink name="View source" url="https://github.com/akyrey/akyrey-website" target="_blank" />
+        </div>
+    </div>
 </div>
 
 <script>
@@ -56,4 +59,5 @@ import HamburgerMenuIcon from "./icons/HamburgerMenuIcon.astro";
     }
 
     document.getElementById("toggle-menu")?.addEventListener("click", toggleMenu);
+    document.getElementById("mobile-menu")?.addEventListener("click", toggleMenu);
 </script>

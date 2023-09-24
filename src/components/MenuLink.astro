@@ -1,0 +1,18 @@
+---
+export type Props = {
+  name: string;
+  url: string;
+  target?: string;
+};
+
+const { name, url, target } = Astro.props;
+---
+
+<a
+    href={url}
+    class="flex cursor-pointer no-underline select-none w-full items-center text-start outline-transparent
+           py-[0.375rem] ps-3 pe-3 bg-white transition-colors duration-75
+           hover:underline active:underline active:bg-gray-200"
+    {target}>
+    {name}
+</a>
