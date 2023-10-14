@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Logo from "./Logo.astro";
 import ThemeToggleButton from "./ThemeToggleButton.astro";
 import githubImage from "../img/github-mark.png";
+import githubWhiteImage from "../img/github-mark-white.png";
 import MenuButton from "./MenuButton.astro";
 
 interface Props {
@@ -17,7 +18,8 @@ interface Props {
         </div>
         <div class="hidden md:flex md:flex-row md:grow md:items-center">
             <a target="_blank" href="https://github.com/akyrey/akyrey-website" class="inline-flex cursor-pointer transition-colors outline-transparent items-center gap-2">
-                <Image src={githubImage} alt="GitHub logo" class="w-5 h-5" />
+                <Image src={githubImage} alt="GitHub logo" class="w-5 h-5 dark:hidden" />
+                <Image src={githubWhiteImage} alt="GitHub logo" class="w-5 h-5 hidden dark:block" />
                 <span>Source</span>
             </a>
         </div>
