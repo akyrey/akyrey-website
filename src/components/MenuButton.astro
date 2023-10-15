@@ -15,25 +15,25 @@ import HamburgerMenuIcon from "./icons/HamburgerMenuIcon.astro";
     </button>
     <div id="mobile-menu" class="invisible translate-y-14 min-w-max absolute top-0 right-0 m-0 z-10">
         <div class="opacity-0 invisible outline-transparent min-w-[14rem] py-2 rounded-md bg-white shadow-sm scale-90">
-            <MenuLink name="Home" url="/" />
-            <MenuLink name="View source" url="https://github.com/akyrey/akyrey-website" target="_blank" />
+            <MenuLink url="/">Home</MenuLink>
+            <MenuLink url="https://github.com/akyrey/akyrey-website" target="_blank">View source</MenuLink>
         </div>
     </div>
 </div>
 
 <script>
-    let open = false;
+    let open: boolean = false;
 
     const toggleMenu = () => {
         open = !open;
 
-        const menu = document.getElementById("mobile-menu");
+        const menu: HTMLElement | null = document.getElementById("mobile-menu");
 
         if (!menu) {
             return;
         }
 
-        const menuContent = menu.querySelector("div");
+        const menuContent: HTMLDivElement | null = menu.querySelector("div");
 
         if (!menuContent) {
             return;

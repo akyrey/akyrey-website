@@ -1,0 +1,16 @@
+---
+export type Props = {
+  class?: string;
+  url: string;
+  target?: string;
+};
+
+const { class: className, url, target } = Astro.props;
+---
+
+<a
+    href={url}
+    class:list={[`text-tertiary outline-transparent underline-offset-4 outline-offset-2 cursor-pointer decoration-none hover:underline transition-colors ease-out duration-150`, className]}
+    {target}>
+    <slot />
+</a>

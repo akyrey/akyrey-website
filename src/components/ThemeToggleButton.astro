@@ -16,7 +16,7 @@ import SunIcon from "./icons/SunIcon.astro";
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    const setPreference = (themeName) => {
+    const setPreference = (themeName: string) => {
         localStorage.setItem(storageKey, themeName)
 
         if (themeName === "light") {
