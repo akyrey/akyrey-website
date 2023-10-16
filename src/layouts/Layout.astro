@@ -3,6 +3,7 @@ import Container from '../components/Container.astro';
 import Footer from '../components/Footer.astro';
 import GlobalStyles from '../components/GlobalStyles.astro';
 import Navbar from '../components/Navbar.astro';
+import PcModel from '../components/PcModel.astro';
 
 interface Props {
 	title: string;
@@ -39,6 +40,7 @@ const { title } = Astro.props;
             <Navbar path="" />
 
             <Container class="max-w-3xl">
+                <PcModel />
                 <slot />
                 <Footer />
             </Container>

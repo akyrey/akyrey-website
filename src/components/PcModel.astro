@@ -1,0 +1,156 @@
+---
+---
+
+<script>
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+
+function loadGLTFModel(
+  scene: THREE.Scene,
+  glbPath: string,
+  options: { receiveShadow: boolean; castShadow: boolean } = { receiveShadow: true, castShadow: true }
+): Promise<THREE.Group<THREE.Object3DEventMap>> {
+  const { receiveShadow, castShadow } = options
+  return new Promise((resolve, reject) => {
+    const loader = new GLTFLoader()
+
+    loader.load(
+      glbPath,
+      (gltf) => {
+        const obj = gltf.scene
+        obj.name = 'dog'
+        obj.position.y = 0
+        obj.position.x = 0
+        obj.receiveShadow = receiveShadow
+        obj.castShadow = castShadow
+        scene.add(obj)
+
+        obj.traverse((child: THREE.Object3D) => {
+          if (child.isMesh) {
+            child.castShadow = castShadow
+            child.receiveShadow = receiveShadow
+          }
+        })
+        resolve(obj)
+      },
+      undefined,
+      (error) => {
+        reject(error)
+      }
+    )
+  })
+}
+
+function easeOutCirc(x: number) {
+  return Math.sqrt(1 - Math.pow(x - 1, 4))
+}
+
+const container = document.getElementById("three-container");
+let renderer: THREE.WebGLRenderer | null = null;
+
+if (container) {
+    const scW = container.clientWidth;
+    const scH = container.clientHeight;
+    renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(scW, scH);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    container.appendChild(renderer.domElement);
+
+    const scene = new THREE.Scene();
+
+    const target = new THREE.Vector3(-0.5, 1.2, 0);
+    const initialCameraPosition = new THREE.Vector3(
+      20 * Math.sin(0.2 * Math.PI),
+      10,
+      20 * Math.cos(0.2 * Math.PI)
+    );
+
+    // 640 -> 240
+    // 8   -> 6
+    const scale = scH * 0.00005 + 4.8;
+    const camera = new THREE.OrthographicCamera(
+      -scale,
+      scale,
+      scale,
+      -scale,
+      0.01,
+      50000
+    );
+    camera.position.copy(initialCameraPosition);
+    camera.lookAt(target);
+
+    const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
+    scene.add(ambientLight);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.autoRotate = true;
+    controls.target = target;
+
+    loadGLTFModel(scene, "/pc.glb", {
+      receiveShadow: false,
+      castShadow: false
+    }).then((group: THREE.Group<THREE.Object3DEventMap>) => {
+      console.debug(group);
+      animate();
+      // setLoading(false)
+    }).catch((e) => {
+      console.error(e);
+    });
+
+    let req: number = 0;
+    let frame: number = 0;
+    const animate = () => {
+      req = requestAnimationFrame(animate);
+
+      frame = frame <= 100 ? frame + 1 : frame;
+
+      if (frame <= 100) {
+        const p = initialCameraPosition;
+        const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
+
+        camera.position.y = 10;
+        camera.position.x =
+          p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
+        camera.position.z =
+          p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
+        camera.lookAt(target);
+      } else {
+        controls.update();
+      }
+
+      if (renderer) {
+        renderer.render(scene, camera);
+      }
+    };
+
+    const handleResize = () => {
+      if (container && renderer) {
+        const scW = container.clientWidth;
+        const scH = container.clientHeight;
+
+        renderer.setSize(scW, scH);
+      }
+    };
+
+    const dispose = () => {
+      if (req) {
+        cancelAnimationFrame(req);
+      }
+      if (renderer) {
+        renderer.domElement.remove();
+        renderer.dispose();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('beforeunload', dispose);
+}
+</script>
+
+<div id="three-container" class="relative -mt-5 md:-mt-16 lg:-mt-32 -mb-10 md:-mb-36 lg:-mb-52 w-72 h-72 md:w-[480px] md:h-480px lg:w-[640px] lg:h-[640px]">
+</div>
