@@ -1,4 +1,5 @@
 ---
+import Spinner from "./Spinner.astro";
 ---
 
 <script>
@@ -97,7 +98,9 @@ if (container) {
     }).then((group: THREE.Group<THREE.Object3DEventMap>) => {
       console.debug(group);
       animate();
-      // setLoading(false)
+      for (const spinner of document.getElementsByClassName("spinner")) {
+        spinner.remove();
+      }
     }).catch((e) => {
       console.error(e);
     });
@@ -153,4 +156,5 @@ if (container) {
 </script>
 
 <div id="three-container" class="relative w-[17.5rem] h-[17.5rem] mx-auto -mt-5 -mb-10 md:w-[30rem] md:h-[30rem] md:-mt-[3.75rem] md:-mb-[8.75rem] lg:w-[40rem] lg:h-[40rem] lg:-mt-[7.5rem] lg:-mb-[12.5rem]">
+    <Spinner class="absolute left-1/2 top-1/2 mx-auto" />
 </div>
