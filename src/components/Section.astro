@@ -1,6 +1,7 @@
 ---
+const { class: className } = Astro.props;
 ---
 
-<div class="mb-6">
+<div class:list={["motion-safe:animate-fadein mb-6", className]}>
     <slot />
 </div>
