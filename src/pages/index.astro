@@ -4,17 +4,18 @@ import Layout from "../layouts/Layout.astro";
 import Link from "../components/Link.astro";
 import Section from "../components/Section.astro";
 import githubImage from "../img/github-mark.png";
+import githubWhiteImage from "../img/github-mark-white.png";
 import personalImage from "../img/me.jpg";
 import Container from "../components/Container.astro";
 ---
 
 <Layout title="Dario Vogogna - Homepage">
     <Container class="max-w-xl">
-        <div class="animate-fadein text-center backdrop-blur p-3 mb-6 rounded-lg bg-white bg-opacity-40 dark:bg-opacity-10">
+        <div class="motion-safe:animate-fadein text-center backdrop-blur p-3 mb-6 rounded-lg bg-white bg-opacity-40 dark:bg-opacity-10">
             <span>Hello, I&apos;m a full-stack developer based in Italy!</span>
         </div>
 
-        <div class="animate-fadein md:flex">
+        <div class="motion-safe:animate-fadein md:flex">
             <div class="grow">
                 <h2 class="text-4xl font-bold">Dario Vogogna</h2>
                 <p>Digital Craftsman (Developer / Artisan)</p>
@@ -63,7 +64,8 @@ import Container from "../components/Container.astro";
                 <ul class="list-none" role="list">
                     <li>
                         <Link url="https://github.com/akyrey/akyrey-website" target="_blank" class="inline-flex items-center gap-2">
-                            <Image src={githubImage} alt="GitHub logo" class="w-5 h-5" />
+                            <Image src={githubImage} alt="GitHub logo" class="w-5 h-5 dark:hidden" />
+                            <Image src={githubWhiteImage} alt="GitHub logo" class="w-5 h-5 hidden dark:block" />
                             <span>@akyrey</span>
                         </Link>
                     </li>
