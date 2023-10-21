@@ -5,7 +5,10 @@ import Link from "../components/Link.astro";
 import Section from "../components/Section.astro";
 import githubImage from "../img/github-mark.png";
 import githubWhiteImage from "../img/github-mark-white.png";
+import gmailImage from "../img/gmail.png";
+import linkedinImage from "../img/linkedin.png";
 import personalImage from "../img/me.jpg";
+import twitterImage from "../img/twitter.png";
 import Container from "../components/Container.astro";
 ---
 
@@ -67,6 +70,24 @@ import Container from "../components/Container.astro";
                             <Image src={githubImage} alt="GitHub logo" class="w-5 h-5 dark:hidden" />
                             <Image src={githubWhiteImage} alt="GitHub logo" class="w-5 h-5 hidden dark:block" />
                             <span>@akyrey</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link url="https://it.linkedin.com/in/dario-vogogna" target="_blank" class="inline-flex items-center gap-2">
+                            <Image src={linkedinImage} alt="LinkedIn logo" class="w-5 h-5" />
+                            <span>My profile</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link url="https://twitter.com/akyrey90" target="_blank" class="inline-flex items-center gap-2">
+                            <Image src={twitterImage} alt="Twitter logo" class="w-5 h-5" />
+                            <span>@akyrey90</span>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link url="mailto:dario.vogogna@gmail.com" target="_blank" class="inline-flex items-center gap-2">
+                            <Image src={gmailImage} alt="Gmail logo" class="w-5 h-5" />
+                            <span>Email me</span>
                         </Link>
                     </li>
                 </ul>
