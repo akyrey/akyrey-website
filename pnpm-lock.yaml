@@ -23,8 +23,8 @@ dependencies:
 
 devDependencies:
   '@types/three':
-    specifier: ^0.158.0
-    version: 0.158.0
+    specifier: ^0.158.2
+    version: 0.158.2
   '@typescript-eslint/parser':
     specifier: ^6.10.0
     version: 6.10.0(eslint@8.53.0)(typescript@5.2.2)
@@ -974,8 +974,8 @@ packages:
     resolution: {integrity: sha512-OgfYE1x2w1jRUXzzKABX+kOdwz2y9PE0uSwnZabkWfJTWOzm7Pvfm4JI2xqRE0q2nwUe2jZLWcrcnhd9lQU63w==}
     dev: true
 
-  /@types/three@0.158.0:
-    resolution: {integrity: sha512-4x+JNt+JzaVbJl0E2p2UrNe/ZCNFUQjnwBi+JRwuQNWWWN7Me6YFl9v6zt85Ll5eepeAFoXueXxh4vYCcetcnQ==}
+  /@types/three@0.158.2:
+    resolution: {integrity: sha512-KPYbdLI8VPhu7qnHqsayfkuk58Qk+20l1U5HBK7uG50EjtrqeCreurNNpnatMZje29XRuTM1A+pGHGdDBHPyUQ==}
     dependencies:
       '@types/stats.js': 0.17.1
       '@types/webxr': 0.5.5
