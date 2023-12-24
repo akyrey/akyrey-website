@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.4
-    version: 5.0.4(astro@3.6.4)(tailwindcss@3.3.6)
+    version: 5.0.4(astro@3.6.4)(tailwindcss@3.4.0)
   astro:
     specifier: ^3.6.4
     version: 3.6.4(typescript@5.3.3)
@@ -15,8 +15,8 @@ dependencies:
     specifier: ^0.32.6
     version: 0.32.6
   tailwindcss:
-    specifier: ^3.3.6
-    version: 3.3.6
+    specifier: ^3.4.0
+    version: 3.4.0
   three:
     specifier: ^0.159.0
     version: 0.159.0
@@ -112,7 +112,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/tailwind@5.0.4(astro@3.6.4)(tailwindcss@3.3.6):
+  /@astrojs/tailwind@5.0.4(astro@3.6.4)(tailwindcss@3.4.0):
     resolution: {integrity: sha512-50ImfEFRBjndtWus6xJOWQ4EVpZWB4d+hieosMPm1Tca68mNTX+Yi1/PhTMk9q/w7iZPIUK/KGBoovo15O10eQ==}
     peerDependencies:
       astro: ^3.0.0 || ^4.0.0
@@ -122,7 +122,7 @@ packages:
       autoprefixer: 10.4.15(postcss@8.4.29)
       postcss: 8.4.29
       postcss-load-config: 4.0.2(postcss@8.4.29)
-      tailwindcss: 3.3.6
+      tailwindcss: 3.4.0
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -1913,7 +1913,7 @@ packages:
       define-properties: 1.2.1
       es-abstract: 1.22.1
       es-set-tostringtag: 2.0.1
-      function-bind: 1.1.1
+      function-bind: 1.1.2
       get-intrinsic: 1.2.1
       globalthis: 1.0.3
       has-property-descriptors: 1.0.0
@@ -2364,10 +2364,6 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
-
-  /function-bind@1.1.1:
-    resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
-    dev: true
 
   /function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
@@ -4059,23 +4055,6 @@ packages:
       postcss: 8.4.29
     dev: false
 
-  /postcss-load-config@4.0.1(postcss@8.4.29):
-    resolution: {integrity: sha512-vEJIc8RdiBRu3oRAI0ymerOn+7rPuMvRXslTvZUKZonDHFIczxztIyJ1urxM1x9JXEikvpWWTUUqal5j/8QgvA==}
-    engines: {node: '>= 14'}
-    peerDependencies:
-      postcss: '>=8.0.9'
-      ts-node: '>=9.0.0'
-    peerDependenciesMeta:
-      postcss:
-        optional: true
-      ts-node:
-        optional: true
-    dependencies:
-      lilconfig: 2.1.0
-      postcss: 8.4.29
-      yaml: 2.3.4
-    dev: false
-
   /postcss-load-config@4.0.2(postcss@8.4.29):
     resolution: {integrity: sha512-bSVhyJGL00wMVoPUzAVAnbEoWyqRxkjv64tUl427SKnPrENtq6hJwUojroMz2VB+Q1edmi4IfrAPpami5VVgMQ==}
     engines: {node: '>= 14'}
@@ -4839,8 +4818,8 @@ packages:
       tslib: 2.6.2
     dev: true
 
-  /tailwindcss@3.3.6:
-    resolution: {integrity: sha512-AKjF7qbbLvLaPieoKeTjG1+FyNZT6KaJMJPFeQyLfIp7l82ggH1fbHJSsYIvnbTFQOlkh+gBYpyby5GT1LIdLw==}
+  /tailwindcss@3.4.0:
+    resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -4861,7 +4840,7 @@ packages:
       postcss: 8.4.29
       postcss-import: 15.1.0(postcss@8.4.29)
       postcss-js: 4.0.1(postcss@8.4.29)
-      postcss-load-config: 4.0.1(postcss@8.4.29)
+      postcss-load-config: 4.0.2(postcss@8.4.29)
       postcss-nested: 6.0.1(postcss@8.4.29)
       postcss-selector-parser: 6.0.13
       resolve: 1.22.4
