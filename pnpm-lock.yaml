@@ -18,8 +18,8 @@ dependencies:
     specifier: ^3.4.1
     version: 3.4.1
   three:
-    specifier: ^0.160.0
-    version: 0.160.0
+    specifier: ^0.160.1
+    version: 0.160.1
 
 devDependencies:
   '@types/three':
@@ -4996,8 +4996,8 @@ packages:
       any-promise: 1.3.0
     dev: false
 
-  /three@0.160.0:
-    resolution: {integrity: sha512-DLU8lc0zNIPkM7rH5/e1Ks1Z8tWCGRq6g8mPowdDJpw1CFBJMU7UoJjC6PefXW7z//SSl0b2+GCw14LB+uDhng==}
+  /three@0.160.1:
+    resolution: {integrity: sha512-Bgl2wPJypDOZ1stAxwfWAcJ0WQf7QzlptsxkjYiURPz+n5k4RBDLsq+6f9Y75TYxn6aHLcWz+JNmwTOXWrQTBQ==}
     dev: false
 
   /titleize@3.0.0:
