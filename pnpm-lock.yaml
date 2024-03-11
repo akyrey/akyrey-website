@@ -18,13 +18,13 @@ dependencies:
     specifier: ^3.4.1
     version: 3.4.1
   three:
-    specifier: ^0.161.0
-    version: 0.161.0
+    specifier: ^0.162.0
+    version: 0.162.0
 
 devDependencies:
   '@types/three':
-    specifier: ^0.161.2
-    version: 0.161.2
+    specifier: ^0.162.0
+    version: 0.162.0
   '@typescript-eslint/parser':
     specifier: ^7.1.1
     version: 7.1.1(eslint@8.56.0)(typescript@5.3.3)
@@ -1005,6 +1005,10 @@ packages:
     dev: false
     optional: true
 
+  /@tweenjs/tween.js@23.1.1:
+    resolution: {integrity: sha512-ZpboH7pCPPeyBWKf8c7TJswtCEQObFo3bOBYalm99NzZarATALYCo5OhbCa/n4RQyJyHfhkdx+hNrdL5ByFYDw==}
+    dev: true
+
   /@types/babel__core@7.20.5:
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
     dependencies:
@@ -1070,9 +1074,10 @@ packages:
     resolution: {integrity: sha512-OgfYE1x2w1jRUXzzKABX+kOdwz2y9PE0uSwnZabkWfJTWOzm7Pvfm4JI2xqRE0q2nwUe2jZLWcrcnhd9lQU63w==}
     dev: true
 
-  /@types/three@0.161.2:
-    resolution: {integrity: sha512-DazpZ+cIfBzbW/p0zm6G8CS03HBMd748A3R1ZOXHpqaXZLv2I5zNgQUrRG//UfJ6zYFp2cUoCQaOLaz8ubH07w==}
+  /@types/three@0.162.0:
+    resolution: {integrity: sha512-0j5yZcVukVIhrhSIC7+LmBPkkMoMuEJ1AfYBZfgNytdYqYREMuiyXWhYOMeZLBElTEAlJIZn7r2W3vqTIgjWlg==}
     dependencies:
+      '@tweenjs/tween.js': 23.1.1
       '@types/stats.js': 0.17.1
       '@types/webxr': 0.5.5
       fflate: 0.6.10
@@ -4944,8 +4949,8 @@ packages:
       any-promise: 1.3.0
     dev: false
 
-  /three@0.161.0:
-    resolution: {integrity: sha512-LC28VFtjbOyEu5b93K0bNRLw1rQlMJ85lilKsYj6dgTu+7i17W+JCCEbvrpmNHF1F3NAUqDSWq50UD7w9H2xQw==}
+  /three@0.162.0:
+    resolution: {integrity: sha512-xfCYj4RnlozReCmUd+XQzj6/5OjDNHBy5nT6rVwrOKGENAvpXe2z1jL+DZYaMu4/9pNsjH/4Os/VvS9IrH7IOQ==}
     dev: false
 
   /titleize@3.0.0:
