@@ -17,7 +17,7 @@
     "three": "^0.167.1"
   },
   "devDependencies": {
-    "@types/three": "^0.167.1",
+    "@types/three": "^0.167.2",
     "@typescript-eslint/parser": "^8.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^1.2.2",
